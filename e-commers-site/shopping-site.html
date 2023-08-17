@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shoping-app</title>
+    <script src="https://kit.fontawesome.com/539b520df4.js" crossorigin="anonymous"></script>
+
+    <style>
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-items: center;
+}
+#titel{
+    position: absolute;
+    text-align: center;
+    margin: auto;
+    top: 10px;
+    cursor: pointer;
+}
+.center{
+    height: 80vh;
+    width: 90vw;
+    display: flex;
+  
+    
+}
+.img{
+    height:99%;
+   
+    border-radius: 6px;
+    padding:0 5px;
+   
+}
+#imgpart{
+   background:rgb(230, 234, 236);
+    height: 110px;
+    width:400px;
+    display: flex;
+    justify-content: center;
+   align-items: center;
+   border-radius: 5px;
+   box-shadow:0px 5px 18px -7px ;
+ color: bisque;
+ box-shadow:0px 4px 7px gray;
+}
+li{
+
+list-style: none;
+}
+hr{
+background:black;
+position:relative;
+height:2px;
+width: 100%;
+
+}
+
+.leftdiv{
+    width:60%;
+    height: 100%;
+    padding-left: 15px;
+    padding-right: 20px;
+   /* // background:linear-gradient(1deg,silver,white,silver); */
+
+   background-color: white;
+   box-shadow:0px 1px 15px -5px;
+   
+
+}
+#cartitem{
+position: relative;
+margin:16px 0 0 10px ;
+border: none;
+outline: none;
+cursor:default;
+
+}
+
+.ltop{
+    display: flex;
+    height: 40%;
+
+
+align-items: center;
+
+
+}
+.lbottom{
+    display: flex;
+    height: 40%;
+   padding:30px 0 0px 0;
+
+}
+.rtop{
+    display: flex;
+    padding:  0 10px;
+ width:100%;
+ justify-content: right;
+}
+#li1{
+    padding:6px 0;
+}
+
+#li2{
+    padding:6px 0;
+}
+.btnsec{
+    display: flex;
+    width: 90px;
+    background: white;
+    height:19px;
+position: relative;
+cursor: pointer;
+border: 1px solid black;
+border-radius: 3px;
+
+
+}
+#ul1top{
+display:flex;
+flex-direction: column;
+flex-direction: left;
+position: relative;
+left:20px;
+width:50%;
+}
+#ul1bottom{
+    display:flex;
+flex-direction: column;
+flex-direction: left;
+position: relative;
+left:20px;
+width:50%;
+}
+#data{
+   
+    width:25px;
+    text-align: center;
+    border: 1px solid black;
+    margin: 0 4px;
+    cursor: pointer;
+    border-top: none;
+    border-bottom: none;
+    outline: none;
+}
+#plus{
+    text-align: center;
+    width: 25px;
+    cursor: pointer;
+    outline: none;
+}
+#minus{
+    text-align: center;
+    width: 25px;
+    cursor: pointer;
+    outline: none;
+}
+#noofcart{
+outline: none;
+cursor: default;
+position: absolute;
+top: 28px;
+width: 90px;
+
+}
+
+
+#noofcart1{
+outline: none;
+cursor: default;
+position: absolute;
+top: 28px;
+width: 90px;
+
+}
+#data1{
+    
+    width:25px;
+    text-align: center;
+    border: 1px solid black;
+    margin: 0 4px;
+    cursor: pointer;
+    border-top: none;
+    border-bottom: none;
+    outline: none;
+}
+
+.rightdiv{
+  
+    width: 30%;
+}
+.topr1{
+width: 100%;
+padding: 4px;
+height:50%;
+margin:0 4px;
+
+
+background-color: white;
+   box-shadow:0px 1px 15px -5px;
+}
+#toprow p{
+    padding: 5px;
+}
+#toprow{
+    display: flex;
+    width:100%;
+margin: 10px 0;
+position: relative;
+
+}
+#pmoney,#smoney{
+    height: 26px;
+    position: absolute;
+    right: 0px;
+width: 60px;
+cursor:default;
+outline: none;
+}
+#toprow2{
+    display: flex;
+    position:relative;
+}
+#tmoney{
+    height: 26px;
+cursor:default;
+outline: none;
+
+position: absolute;
+right: 0px;
+width: 60px;
+}
+
+
+#ac{
+  
+cursor:default;
+outline: none;
+position: absolute;
+right: 0px;
+
+}
+#toprow2 p{
+
+    padding:5px 0  15px 0;
+}
+#checkbtn{
+    height: 27px;
+    margin-left:5px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    color: white;
+    padding: 4px;
+    cursor: pointer;
+    background-color: rgb(80, 80, 238);
+}
+#middle{
+    width: 100%;
+    height: 6%;
+    margin:11px 6px;
+   
+position: relative;
+overflow: hidden;
+transition:1s;
+cursor: pointer;
+background-color: white;
+   box-shadow:0px 1px 15px -5px;
+}
+#slidepara{
+    padding:5px 0px;
+    height: 30px;
+    
+    cursor: pointer;
+    width: 100%;
+   display: grid;
+   place-items: center;
+}
+#sliderow{
+ width: 100%;
+ display:grid ;
+
+place-items: center;
+
+}
+.topr1 h4{
+margin-top: 15px;
+}
+#cuppon{
+    margin: 9px 0 0px 0;
+    height: 0px;
+
+    outline: none;
+ transition: 1s;
+     visibility: hidden; 
+right: 0px;
+width:96%;
+
+}
+
+#hurray{
+    width: 60%;
+    height: 15px;
+    text-align: center;
+position: relative;
+left:4px;
+margin: 0px;
+outline: none;
+cursor: default;
+}
+.last{
+    margin-top: 10px;
+    height: 20%;
+    width: 100%;
+    /* background:linear-gradient(1deg,silver,white,silver); */
+    margin:11px 6px;
+
+    position: relative;
+
+
+    
+background-color: white;
+   box-shadow:0px 1px 15px -5px;
+}
+.last p{
+
+    position: relative;
+    top: 10px;
+}
+#time{
+    height: 20px;
+    position: absolute;
+    bottom: 5px;
+    outline: none;
+    cursor: default;
+    left: 2px;
+    width: 80%;
+
+
+}
+#applybtn{
+  height: 0px;
+    width:38px;
+    position: absolute;
+    bottom: 0px;
+    left: 7px;
+    color: white;
+    padding: 4px;
+    cursor: pointer;
+    background-color: rgb(80, 80, 238);
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    padding: 2px;
+    text-align: center;
+    visibility: hidden; 
+    transition:1.1s;
+
+}
+#slideicon{
+   position: absolute;
+   right: 12px;
+}
+    </style>
+</head>
+<body>
+    <div class="center">
+<h1 id="titel" onclick="location='https://google.com'">CART_ITEMS</h1>
+        <div class="leftdiv">
+            
+            <input  value="0 Item Cart" id="cartitem" ></input>
+            <div class="ltop">
+                <section id="imgpart">
+                <img class="img" src="blueshirt-removebg-preview.png">
+            </section>
+
+
+            
+            <ul id="ul1top">
+                <h4 id="head1">Blue Bezer</h4>
+                <li id="li1">shirt :blue</li>
+                <li id="li1">color :BlUE</li>
+                <li id="li1">size  :M</li>
+                
+            </ul>
+                <div class="rtop">
+
+                
+                <div class="btnsec">
+                    <li id="plus" onclick="increase('data','noofcart')"><i class="fa-solid fa-plus"></i></li>
+
+                    <input type="text" value="0" id="data">
+
+                    <li id="minus" onclick="decrease('data','noofcart')"><i class="fa-solid fa-minus"></i></li>
+                    <input type="text" id="noofcart">
+                </div>
+                </div>
+            </div>
+
+<hr>
+            <div class="lbottom">
+                <section id="imgpart">
+                <img class="img" src="blezer1-removebg-preview.png">
+                </section>
+                
+                <ul id="ul1bottom">
+                    <h4 id="head2">Black Blezer</h4>
+                    <li id="li2">shirt :Black</li>
+                    <li id="li2">color :Black</li>
+                    <li id="li2">size  :M</li>
+                    
+                </ul>
+                <div class="rtop">
+               
+                <div class="btnsec">
+                    <li id="plus" onclick="increase('data1','noofcart1')"><i class="fa-solid fa-plus"></i></li>
+                    <input type="text" value="0" id="data1">
+                    <li id="minus" onclick="decrease('data1','noofcart1')"><i class="fa-solid fa-minus"></i></li>
+                    <input type="text" id="noofcart1">
+                </div>
+             </div>
+            </div>
+
+        </div>
+        
+
+        <div class="rightdiv">
+
+        <div class="topr1">
+            <h4>The Total Amount Of</h4>
+            <div id="toprow">
+                <p>Product Amount</p>
+                <p id="ac">$<span id="pmoney">0.00</span></p>
+            </div>
+
+            <div id="toprow">
+                <p>Shipping Charge</p>
+                <p id="ac">$<span id="smoney">0.00</span></p>
+            </div>
+            <hr>
+            
+            <div id="toprow2">
+                <p>Total Amount of(including VAT)</p>
+                <p id="ac">$<span id="tmoney">0.00</span></p>
+            </div>
+            <!-- <button  id="checkbtn"onclick="funckeck()">CHECKOUT</button> -->
+        </div>
+
+        <div id="middle">
+            <div id="sliderow" ><p onclick="slidefun()" id="slidepara">Use Cupon Code<i id="slideicon"class="fa-solid fa-plus"></i></p>
+
+                <input type="text" id="cuppon">
+            </div>
+            <span id="hurray"></span>
+
+            <button  id="applybtn" onclick="fun()">Apply</button>
+      
+        </div>
+ 
+        <div class="last">
+            <p>Expected Delivery Date</p>
+
+            <span type="text" id="time"></span>
+        </div>
+      
+        </div>
+    </div>
+
+
+    <script>
+var pmoney=document.getElementById('pmoney');
+var smoney=document.getElementById('smoney');
+var tmoney=document.getElementById('tmoney');
+var cuppon=document.getElementById('cuppon');
+var hurray=document.getElementById('hurray');
+var time=document.getElementById('time');
+var cartitem=document.getElementById('cartitem');
+var middle=document.getElementById('middle');
+var cuppon=document.getElementById('cuppon');
+var applybtn=document.getElementById('applybtn');
+// var slidepara=document.getElementById('slidepara');
+ var date=new Date();
+var totalmoney=0;
+ var d=date.getDate();
+ var m=date.getMonth()+1;
+var y=date.getFullYear();
+
+console.log(d);
+var count=0;
+var click=0;
+
+
+function slidefun(){
+
+    if(click==0){
+        middle.style.height="25%";
+        cuppon.style.visibility="visible";
+        cuppon.style.height="29px";
+
+        applybtn.style.visibility="visible";
+        applybtn.style.bottom="5px";
+        applybtn.style.height="20px";
+        click=click+1;
+    }
+    else if(click==1){
+        middle.style.height="6%";
+        cuppon.style.visibility="hidden";
+        cuppon.style.height="0px";
+        applybtn.style.visibility="hidden";
+        applybtn.style.bottom="-100px";
+        applybtn.style.height="0px";
+        click=click-1;
+    }
+
+
+}
+function fun(){
+    if(cuppon.value=='code1'){
+     
+if(count==0){
+    if(  tmoney.innerHTML==0.00){
+        alert('add items to cart')
+        hurray.innerHTML="";
+    }
+else if(  tmoney.innerHTML!=0.00){
+    hurray.innerHTML="Hurray! code is valid :)"
+    
+    tmoney.innerHTML= parseInt(tmoney.innerHTML)-5;
+
+    count=count+1;
+}
+
+}
+    
+else{
+        alert('cupon already applied');
+    }  
+
+
+    }
+
+    else{
+        alert('coupon code is : code1');
+        hurray.innerHTML="Invalid cupon code "
+    }
+
+}
+
+
+function increase(indec,cart){
+    let invalue=document.getElementById(indec);
+    var value;
+if(invalue.value>=5){
+    invalue.value=5;
+    alert('more then 5 item not allow');
+    invalue.style.background="red";
+    invalue.style.color="white";
+}
+else{
+    invalue.value=parseInt(invalue.value)+1;
+
+    
+    invalue.style.background="white";
+    invalue.style.color="black";
+    document.getElementById(cart).value=`Cart ${invalue.value} Items`;
+    pmoney.innerHTML= parseInt(pmoney.innerHTML)+10;
+   
+    smoney.innerHTML= parseInt(smoney.innerHTML)+1;
+    tmoney.innerHTML= parseInt(tmoney.innerHTML)+(10+1);
+    time.innerHTML=`${d}/${m}/${y} - ${d+2}/${m}/${y} `;
+
+    cartitem.value=`${parseInt(cartitem.value)+1} Item Cart`;
+}
+
+
+
+
+
+
+
+}
+
+
+function decrease(indec,cart){
+ 
+    let invalue=document.getElementById(indec);
+if(invalue.value<=0){
+    invalue.value=0;
+    alert('less then 0 item is not vald');
+    time.innerHTML=` `;
+   
+}
+else{
+    
+    invalue.value=parseInt(invalue.value)-1;
+    invalue.style.background="white";
+    invalue.style.color="black";
+    document.getElementById(cart).value=`Cart ${invalue.value} Items`;
+    pmoney.innerHTML= parseInt(pmoney.innerHTML)-10;
+    smoney.innerHTML= parseInt(smoney.innerHTML)-1;
+    tmoney.innerHTML= parseInt(tmoney.innerHTML)-(10+1);
+    cartitem.value=`${parseInt(cartitem.value)-1} Item Cart`;
+}
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
